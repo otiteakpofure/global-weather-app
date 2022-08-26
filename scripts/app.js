@@ -79,4 +79,15 @@ function formChange(e){
     }).catch((err)=>{
         console.log(err)
     });
+
+    ///local stroage systme 
+    localStorage.setItem("city", city);
+
+
+}
+
+if(localStorage.getItem("city")){
+    updateCity(localStorage.getItem("city"))
+    .then(data=>updateUI(data) )
+    .catch(err => console.log(err))
 }
